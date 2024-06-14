@@ -43,7 +43,7 @@
         }
         .carousel {
             display: flex;
-            overflow-x: auto;
+            overflow: hidden;
             scroll-behavior: smooth;
         }
         .carousel-item {
@@ -118,7 +118,7 @@
             <img src="produto.jpg" alt="Produto X">
             <div class="benefits">
                 <h3>Benefícios:</h3>
-                <div class="carousel">
+                <div class="carousel" id="benefits-carousel">
                     <div class="carousel-item"><li>Aumenta sua produtividade</li></div>
                     <div class="carousel-item"><li>Melhora sua qualidade de vida</li></div>
                     <div class="carousel-item"><li>Fácil de usar e implementar</li></div>
@@ -133,7 +133,7 @@
             </div>
             <div class="testimonials">
                 <h3>O que nossos clientes dizem:</h3>
-                <div class="carousel">
+                <div class="carousel" id="testimonials-carousel">
                     <div class="carousel-item">
                         <blockquote>
                             <p>"O Produto X mudou minha vida! Agora sou muito mais produtivo e feliz."</p>
@@ -202,5 +202,26 @@
             </div>
         </div>
     </div>
+    <script>
+        const benefitsCarousel = document.getElementById('benefits-carousel');
+        const testimonialsCarousel = document.getElementById('testimonials-carousel');
+        
+        function startCarousel(carousel, interval) {
+            let scrollAmount = 0;
+            setInterval(() => {
+                scrollAmount += 300;
+                if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+                    scrollAmount = 0;
+                }
+                carousel.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }, interval);
+        }
+        
+        startCarousel(benefitsCarousel, 2000);
+        startCarousel(testimonialsCarousel, 3000);
+    </script>
 </body>
 </html>
