@@ -10,12 +10,14 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
         }
         .header {
             background-color: #ff6f61;
@@ -27,10 +29,7 @@
             margin: 0;
         }
         .main {
-            background-color: #fff;
             padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .main h2 {
             text-align: center;
@@ -39,6 +38,21 @@
         .main img {
             display: block;
             margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .carousel-item {
+            min-width: 300px;
+            flex: 0 0 auto;
+            margin: 10px;
+        }
+        .carousel::-webkit-scrollbar {
+            display: none;
         }
         .benefits, .testimonials, .cta {
             margin: 20px 0;
@@ -71,9 +85,26 @@
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         .cta button:hover {
             background-color: #e55a4f;
+        }
+        @media (max-width: 768px) {
+            .carousel-item {
+                min-width: 80%;
+            }
         }
     </style>
 </head>
@@ -84,26 +115,86 @@
         </div>
         <div class="main">
             <h2>Descubra os benefícios do Produto X</h2>
-            <img src="produto.jpg" alt="Produto X" width="300">
+            <img src="produto.jpg" alt="Produto X">
             <div class="benefits">
                 <h3>Benefícios:</h3>
-                <ul>
-                    <li>Aumenta sua produtividade</li>
-                    <li>Melhora sua qualidade de vida</li>
-                    <li>Fácil de usar e implementar</li>
-                    <li>Garantia de satisfação</li>
-                </ul>
+                <div class="carousel">
+                    <div class="carousel-item"><li>Aumenta sua produtividade</li></div>
+                    <div class="carousel-item"><li>Melhora sua qualidade de vida</li></div>
+                    <div class="carousel-item"><li>Fácil de usar e implementar</li></div>
+                    <div class="carousel-item"><li>Garantia de satisfação</li></div>
+                    <div class="carousel-item"><li>Economiza tempo</li></div>
+                    <div class="carousel-item"><li>Compatível com todos os dispositivos</li></div>
+                    <div class="carousel-item"><li>Suporte 24/7</li></div>
+                    <div class="carousel-item"><li>Alta durabilidade</li></div>
+                    <div class="carousel-item"><li>Design moderno</li></div>
+                    <div class="carousel-item"><li>Preço acessível</li></div>
+                </div>
             </div>
             <div class="testimonials">
                 <h3>O que nossos clientes dizem:</h3>
-                <blockquote>
-                    <p>"O Produto X mudou minha vida! Agora sou muito mais produtivo e feliz."</p>
-                    <footer>- João Silva</footer>
-                </blockquote>
-                <blockquote>
-                    <p>"Nunca pensei que algo tão simples poderia fazer tanta diferença no meu dia a dia."</p>
-                    <footer>- Maria Oliveira</footer>
-                </blockquote>
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"O Produto X mudou minha vida! Agora sou muito mais produtivo e feliz."</p>
+                            <footer>- João Silva</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Nunca pensei que algo tão simples poderia fazer tanta diferença no meu dia a dia."</p>
+                            <footer>- Maria Oliveira</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Excelente qualidade e suporte. Recomendo a todos."</p>
+                            <footer>- Pedro Costa</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Vale cada centavo! Minha produtividade melhorou muito."</p>
+                            <footer>- Ana Sousa</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"O melhor produto que já comprei. Muito satisfeito."</p>
+                            <footer>- Lucas Pereira</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Recomendo a todos que buscam qualidade e eficiência."</p>
+                            <footer>- Gabriela Martins</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Produto inovador e de alta qualidade. Amei!"</p>
+                            <footer>- Ricardo Lima</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Superou todas as minhas expectativas. Excelente!"</p>
+                            <footer>- Fernanda Rocha</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Produto de primeira linha. Recomendo sem dúvidas."</p>
+                            <footer>- Mariana Nunes</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote>
+                            <p>"Minha experiência com o Produto X foi fantástica."</p>
+                            <footer>- Eduardo Alves</footer>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
             <div class="cta">
                 <h3>Não perca tempo! Adquira o Produto X agora mesmo!</h3>
